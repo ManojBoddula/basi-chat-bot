@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
-from langchain_community.memory import ConversationBufferMemory
-from langchain.prompts import PromptTemplate
+from langchain.memory import ConversationBufferMemory
+from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
 import streamlit as st
 import os
@@ -8,7 +8,7 @@ import os
 load_dotenv()  # works locally, ignored on Streamlit Cloud
 
 model = ChatOpenAI(
-    model="allenai/olmo-3.1-32b-think:free",
+    model="nvidia/nemotron-3-nano-30b-a3b:free",
     openai_api_key=os.getenv("OPENROUTER_API_KEY"),
     openai_api_base="https://openrouter.ai/api/v1",
 )
